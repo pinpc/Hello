@@ -1,0 +1,213 @@
+VAS,Subsystem,Name,Prio,Dependency,Responsible,Description,VW,Audi, System
+Legacy_VAS,Middleware,cam_20ms,75,,CDS,20 ms CAM (Cyclically Activity Manager) container,true,true,Productive
+GSServers_VAS,RGL,VSP0_USR_IRQ_HANDLER,205,Highest priority ,CDS/Renesas,Handle the VSP IRQ. Must have the highest prio ,false,true,Productive
+HMI_VAS,RGL,VSP0_USR_IRQ_HANDLER,205,Highest priority ,CDS/Renesas,Handle the VSP IRQ. Must have the highest prio ,true,false,Productive
+HMI_VAS,MOST,EB_MLB_Task,252,,CDS,Media Local Bus driver ,true,true,Productive
+HMI_VAS,MOST,EB_NS_Task,251,,CDS,MOST Net Service Task ,true,true,Productive
+HMI_VAS,MOST,EB_ECL_Task,250,,CDS,MOST Electrical Control Line Task,true,true,Productive
+HMI_VAS,MOST,EB_FB_Task,250,,CDS,MOST Function Block Task ,true,true,Productive
+HMI_VAS,MOST,EB_VOM_Task,127,,CDS,MOST Video Object Monitoring Task ,true,true,Productive
+Kernel_VAS,Integrity,GipcTarget_Dispatch,255,,CDS/GHS,Gipc: ipc target dispatcher ,true,true,Productive
+Kernel_VAS,BSP,USBMassStorageDriverTask,254,,CDS/Renesas,Task of USB stack defined in the BSP,true,true,Development
+Kernel_VAS,Integrity,LoaderTask,21,,CDS/GHS,Dynamic Downloads loader task,true,true,Productive
+Kernel_VAS,Integrity,ResourceManager,254,,CDS/GHS,Manages kernel objects. Dynamic allocator of resources.,true,true,Productive
+Kernel_VAS,Integrity,RunModePartnerTask,254,,CDS/GHS,Run Mode Debugging task,true,true,Development
+Kernel_VAS,Integrity,MULTILoadAgent,254,,CDS/GHS,Dynamic Downloads loader agent for Multi,true,true,Development
+BaseSystem_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+GSServers_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+HMI_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+Kernel_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+Legacy_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+SafeGRA_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,false,Development
+UNTRUSTED_VAS,Integrity,OSAAgent,254,,CDS/GHS,OSA Debug agent task,true,true,Development
+Kernel_VAS,BSP,USBtoEthernetDriverTask,254,,CDS/Renesas,Task of USB stack defined in the BSP,true,true,Development
+Kernel_VAS,BSP,USBCDCServerTask,254,,CDS/Renesas,USB task of the USB stack defined in the BSP,true,true,Development
+Kernel_VAS,Integrity,InetServer,200,,CDS/GHS,IP server task of the ethernet stack,true,true,Development
+Kernel_VAS,BSP,USB_Server_Task,200,,CDS/Renesas,Task from the USB stack defined in the BSP,true,true,Development
+Kernel_VAS,Integrity,IOTask,152,,CDS/GHS,Task of the filesystem,true,true,Development
+Kernel_VAS,Integrity,HealthMonitor,152,,CDS/GHS,Monitors the health of Integrity,true,true,Productive
+Kernel_VAS,Integrity,Unmounter,151,,CDS/GHS,Task of the filesystem,true,true,Development
+Kernel_VAS,Integrity,IOAssistant1,150,,CDS/GHS,Task of the filesystem,true,true,Development
+Kernel_VAS,Integrity,Syncer,150,,CDS/GHS,Task of the filesystem,true,true,Development
+Kernel_VAS,Integrity,IOAssistant0,150,,CDS/GHS,Task of the filesystem,true,true,Development
+Kernel_VAS,Integrity,FileServer,150,,CDS/GHS,Task of the filesystem,true,true,Productive
+Kernel_VAS,SecureGRA,SRPC_KernelLoaderTsk,33,,CDS,Load the Secure GRA VAS,true,true,Productive
+Kernel_VAS,NANDS,NATL_ISR,121,> NATL_Sched ,CDS,Receives the notification of the request from NAND Driver.,true,true,Productive
+Kernel_VAS,NANDS,NATL_Sched,120,High priority needed to ensure required download bandwidth ,CDS,Schedules the RW Jobs from App,true,true,Productive
+Kernel_VAS,NANDS,NATL_MaintTrigger,77,> NATL_Maint,CDS/Renesas,Triggers Maintenance Task (every 10ms) monitors the application requests and notifies nand-sys state to the App ,true,true,Productive
+Kernel_VAS,NANDS,NATL_Maint,23,Priority lower than FPK_Event,CDS/Renesas,NAND Maintenance,true,true,Productive
+Kernel_VAS,Integrity,VirtualDriverMediator,10,,CDS/GHS,Mediates the virtual driver task,true,true,Productive
+BaseSystem_VAS,Trace,TRACE_TCPTask,4,Low priority ,CDS,Sending data over TCP/IP ,true,true,Development
+HMI_VAS,Trace,TRACE_TCPTask,4,Low priority ,CDS,Sending data over TCP/IP ,true,true,Development
+Kernel_VAS,Trace,TRACE_TCPTask,4,Low priority ,CDS,Sending data over TCP/IP ,true,true,Development
+Legacy_VAS,Trace,TRACE_TCPTask,4,Low priority ,CDS,Sending data over TCP/IP ,true,true,Development
+SafeGRA_VAS,Trace,TRACE_TCPTask,4,Low priority ,CDS,Sending data over TCP/IP ,true,false,Development
+BaseSystem_VAS,Trace,TRACE_Tick,4,Low priority ,CDS,Timeout supervision ,true,true,Development
+HMI_VAS,Trace,TRACE_Tick,4,Low priority ,CDS,Timeout supervision ,true,true,Development
+Kernel_VAS,Trace,TRACE_Tick,4,Low priority ,CDS,Timeout supervision ,true,true,Development
+Legacy_VAS,Trace,TRACE_Tick,4,Low priority ,CDS,Timeout supervision ,true,true,Development
+SafeGRA_VAS,Trace,TRACE_Tick,4,Low priority ,CDS,Timeout supervision ,true,false,Development
+BaseSystem_VAS,Trace,TRACE_Cache,4,Low priority ,CDS,Sink Timer / Events; ring buffer handling ,true,true,Development
+HMI_VAS,Trace,TRACE_Cache,4,Low priority ,CDS,Sink Timer / Events; ring buffer handling ,true,true,Development
+Kernel_VAS,Trace,TRACE_Cache,4,Low priority ,CDS,Sink Timer / Events; ring buffer handling ,true,true,Development
+Legacy_VAS,Trace,TRACE_Cache,4,Low priority ,CDS,Sink Timer / Events; ring buffer handling ,true,true,Development
+SafeGRA_VAS,Trace,TRACE_Cache,4,Low priority ,CDS,Sink Timer / Events; ring buffer handling ,true,false,Development
+BaseSystem_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+GSServers_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+HMI_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+Kernel_VAS,Integrity,Initial,255,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+Legacy_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+SafeGRA_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,false,Productive
+UNTRUSTED_VAS,Integrity,Initial,127,,CDS/GHS,Integrity task to initialize VAS,true,true,Productive
+Kernel_VAS,Integrity,Idle0,0,,CDS/GHS,One idle task per CPU core,true,true,Productive
+BaseSystem_VAS,Middleware,ACE_DetachedThreadManager,127,,CDS,Clean up spawn ACE detachable threads.,true,true,Productive
+HMI_VAS,Middleware,ACE_DetachedThreadManager,127,,CDS,Clean up spawn ACE detachable threads.,true,true,Productive
+Legacy_VAS,Middleware,ACE_DetachedThreadManager,127,,CDS,Clean up spawn ACE detachable threads.,true,true,Productive
+SafeGRA_VAS,Middleware,ACE_DetachedThreadManager,127,,CDS,Clean up spawn ACE detachable threads.,true,false,Productive
+BaseSystem_VAS,Middleware,ACE_LiveSupervisor,127,Highest priority ,CDS,Sends heartbeat messages to ACE tasks and checks acknowledgment.,true,true,Productive
+HMI_VAS,Middleware,ACE_LiveSupervisor,127,Highest priority ,CDS,Sends heartbeat messages to ACE tasks and checks acknowledgment.,true,true,Productive
+Legacy_VAS,Middleware,ACE_LiveSupervisor,127,Highest priority ,CDS,Sends heartbeat messages to ACE tasks and checks acknowledgment.,true,true,Productive
+SafeGRA_VAS,Middleware,ACE_LiveSupervisor,127,Highest priority ,CDS,Sends heartbeat messages to ACE tasks and checks acknowledgment.,true,false,Productive
+BaseSystem_VAS,Middleware,IPCMediator,110,High priority; should not be interrupted too long; == Dispatcher ,CDS,Forwards IPC messages to Dispatchers in VASes,true,true,Productive
+BaseSystem_VAS,Middleware,Bridge,110,Priority == IPC ,CDS,DPOOL-IPC bridge; Queue IPC signals if bulk transfer enabled ,true,true,Productive
+HMI_VAS,Middleware,Bridge,110,Priority == IPC ,CDS,DPOOL-IPC bridge; Queue IPC signals if bulk transfer enabled ,true,true,Productive
+Legacy_VAS,Middleware,Bridge,110,Priority == IPC ,CDS,DPOOL-IPC bridge; Queue IPC signals if bulk transfer enabled ,true,true,Productive
+SafeGRA_VAS,Middleware,Bridge,110,Priority == IPC ,CDS,DPOOL-IPC bridge; Queue IPC signals if bulk transfer enabled ,true,false,Productive
+BaseSystem_VAS,Middleware,IPCActiveTimer,110,High priority; should not be interrupted too long,CDS,Schedules and handles IPC timers. ,true,true,Productive
+HMI_VAS,Middleware,IPCActiveTimer,110,High priority; should not be interrupted too long,CDS,Schedules and handles IPC timers. ,true,true,Productive
+Legacy_VAS,Middleware,IPCActiveTimer,110,High priority; should not be interrupted too long,CDS,Schedules and handles IPC timers. ,true,true,Productive
+SafeGRA_VAS,Middleware,IPCActiveTimer,110,High priority; should not be interrupted too long,CDS,Schedules and handles IPC timers. ,true,false,Productive
+BaseSystem_VAS,Middleware,IPCDispatcher,110,High priority; should not be interrupted too long; == Mediator,CDS,Gipc : forwards ipc messages to components ,true,true,Productive
+HMI_VAS,Middleware,IPCDispatcher,110,High priority; should not be interrupted too long; == Mediator,CDS,Gipc : forwards ipc messages to components ,true,true,Productive
+Legacy_VAS,Middleware,IPCDispatcher,110,High priority; should not be interrupted too long; == Mediator,CDS,Gipc : forwards ipc messages to components ,true,true,Productive
+SafeGRA_VAS,Middleware,IPCDispatcher,110,High priority; should not be interrupted too long; == Mediator,CDS,Gipc : forwards ipc messages to components ,true,false,Productive
+HMI_VAS,NANDS,NATL_Notify,109,< IPC ,CDS,Callback download finished ,true,true,Productive
+BaseSystem_VAS,NANDS,NATL_InitDeinit,106, > Main_Startup  ,CDS,Init; Deinit of NAND,true,true,Productive
+BaseSystem_VAS,NANDS,NATL_SysResMessageReceiver,106,> Main_Startup ,CDS,Init/Deinit according to System state (CRHDL) ,true,true,Productive
+BaseSystem_VAS,Middleware,MAIN_StartupThread,105,< Loader; < NATL ,CDS,System Initialization ,true,true,Productive
+HMI_VAS,Middleware,MAIN_StartupThread,105,< Loader; < NATL ,CDS,System Initialization ,true,true,Productive
+Legacy_VAS,Middleware,MAIN_StartupThread,105,< Loader; < NATL ,CDS,System Initialization ,true,true,Productive
+SafeGRA_VAS,Middleware,MAIN_StartupThread,105,< Loader; < NATL ,CDS,System Initialization ,true,false,Productive
+BaseSystem_VAS,Middleware,MAIN_StartupControl,105,< Loader; < NATL ,CDS,System Initialization ,true,true,Productive
+BaseSystem_VAS,Middleware,DPOOL_IpcNotifyTsk,63,,CDS,Collects “standard” prio DPOOL change notifications and sends it block-wise if bulk transfer enabled. ,true,true,Productive
+HMI_VAS,Middleware,DPOOL_IpcNotifyTsk,63,,CDS,Collects “standard” prio DPOOL change notifications and sends it block-wise if bulk transfer enabled. ,true,true,Productive
+SafeGRA_VAS,Middleware,DPOOL_IpcNotifyTsk,63,,CDS,Collects “standard” prio DPOOL change notifications and sends it block-wise if bulk transfer enabled. ,true,false,Productive
+BaseSystem_VAS,FSCHED,FSCHED_Client,57,Lower Prio than the TimeDomainFast and CompositionFast,CDS,FSCHED Client thread,true,true,Productive
+Legacy_VAS,FSCHED,FSCHED_Client,57,Lower Prio than the TimeDomainFast and CompositionFast,CDS,FSCHED Client thread,true,false,Productive
+BaseSystem_VAS,Middleware,CRHDLTimeoutsTask,20,,CDS,Handles timeouts during init/deinit of resources ,true,true,Productive
+BaseSystem_VAS,Middleware,CRHDLTask,20,,CDS,Manages resource requests and supervises (de-)initializations of components ,true,true,Productive
+BaseSystem_VAS,Middleware,CRHDL_CheckAliveTask,10,Prio > Debug Threads ,CDS,Cyclic checking of components ,true,true,Productive
+BaseSystem_VAS,Trace,TRACE_Master,4,Low priority ,CDS,Receiving data from slaves ,true,true,Development
+BaseSystem_VAS,Trace,TRACE_Slave,4,Low priority,CDS,Sending data to master ,true,true,Development
+HMI_VAS,Trace,TRACE_Slave,4,Low priority,CDS,Sending data to master ,true,true,Development
+Legacy_VAS,Trace,TRACE_Slave,4,Low priority,CDS,Sending data to master ,true,true,Development
+SafeGRA_VAS,Trace,TRACE_Slave,4,Low priority,CDS,Sending data to master ,true,false,Development
+BaseSystem_VAS,Trace,TRACE_Printf,2,Low priority,CDS,Printf implementation ,true,true,Productive
+HMI_VAS,Trace,TRACE_Printf,2,Low priority,CDS,Printf implementation ,true,true,Productive
+Legacy_VAS,Trace,TRACE_Printf,2,Low priority,CDS,Printf implementation ,true,true,Productive
+SafeGRA_VAS,Trace,TRACE_Printf,2,Low priority,CDS,Printf implementation ,true,false,Productive
+Legacy_VAS,PCM,PCMPLRefill,125,Prio > driver support task ,CDS,This is the main task responsible for preparing sound data. Sound data must be prepared within ~5ms hence this task must not be delayed otherwise you will hear artifacts on the speaker.,true,false,Productive
+Legacy_VAS,Middleware,DriverSupport,111,Higher priority as IPC ,CDS,EVHD Task; short runtime; low latency ,true,true,Productive
+Legacy_VAS,Middleware,lbridge_dispatcher,110,Same priority as IPC ,CDS,Forward IPC messages to Dispatchers in VASes,true,true,Productive
+Legacy_VAS,Middleware,EVHD__IpcBridge,110,Same priority as IPC ,CDS,Translation of EVHD events ? IPC signals ,true,true,Productive
+Legacy_VAS,MCOM,MCOMW_vSPISlaveObserverTASK,100,,CDS,Thread used to monitor the the SPI communication from GC to AC. This thread waits for the ready signal which is raised by the AC when the SPI communication is finished and the data is correctly processed. The Ready signal triggers the start of the next SPI communication in the direction GC to AC.,true,true,Productive
+Legacy_VAS,MCOM,MCOMW_vSPITransmitterTASK,100,,CDS,Thread used for SPI data transmission,true,true,Productive
+Legacy_VAS,MCOM,MCOMW_vSPIReceiverTASK,100,,CDS,Thread used for SPI data reception,true,true,Productive
+Legacy_VAS,Middleware,cam_10ms,85,,FPKE,10 ms CAM (Cyclically Activity Manager) container ,true,true,Productive
+Legacy_VAS,Middleware,cam_100ms,65,,FPKE,100 ms CAM (Cyclically Activity Manager) container ,true,true,Productive
+Watchdog_Pkg,Middleware,cam_100ms,65,,FPKE,100 ms CAM (Cyclically Activity Manager) container ,true,true,Productive
+Legacy_VAS,MCOM,ICOM_Rx_Tsk,96,,CDS,ICOM Rx (reception) Thread,true,true,Productive
+Legacy_VAS,MCOM,ICOM_Tx_Tsk,56,Priority < HMI ,CDS,ICOM Tx (Transmission) Thread ,true,true,Productive
+Legacy_VAS,Middleware,CTHDL_Legacy_CRHDL_HighPrio,55,< CAM ,CDS,Init of CRHDL containers ,true,true,Productive
+Legacy_VAS,ModuleSW,app_Prio0,43,,FPKE,Thread for applications ,true,true,Productive
+Legacy_VAS,MMI,MMI,42,,FPKE,Task responsible for ZPM (Central Priority manager) and MFL key processing.,true,true,Productive
+Legacy_VAS,ModuleSW,basicApp_prio2,32,Depends on application ,FPKE,Legacy Thread for basic applications ,true,true,Productive
+Watchdog_Pkg,ModuleSW,basicApp_prio2,32,Depends on application ,FPKE,Legacy Thread for basic applications ,true,true,Productive
+Legacy_VAS,Middleware,LegacyCallbacks,32,Depends on application ,FPKE,General component to receiv RPC-IPC messages in Legac VAS; In RefSys used for PCM callbacks ,true,true,Productive
+Legacy_VAS,BAP,BAPILHCO_ServerCompo,32,,FPKE,BAP Server component that services the BAP RPC from the HMI VAS ,true,true,Productive
+GSServers_VAS,RGL,DU0_USR_IRQ_HANDLER,205,Highest priority ,CDS,Handle the DU IRQ. Must have the highest prio ,false,true,Productive
+HMI_VAS,RGL,DU0_USR_IRQ_HANDLER,205,Highest priority ,CDS,Handle the DU IRQ. Must have the highest prio ,true,true,Productive
+HMI_VAS,HMI,FPK_Display,123,Higher priority than FPK_TimeDomains. Lower than IPC task,FPKE,This is where we run the main HMI scheduler (aka Kernel) to schedule cyclic computation; composition and consistency point threads. This task drives display and handles Vsync.  ,true,false,Productive
+HMI_VAS,RGL,VSP1_USR_IRQ_HANDLER,205,Highest priority ,CDS/Renesas,This is the main task responsible for preparing sound data. Sound data must be prepared within ~5ms hence this task must not be delayed otherwise you will hear artifacts on the speaker. ,true,true,Productive
+HMI_VAS,Graphics,Grau_Comp,107, > Main_Startup  ,FPKE,Initialisation of GS ,true,false,Productive
+HMI_VAS,HMI,HMI_SM,73,,CDS,State machine to handle the init and deinit of the HMI subsystem,true,false,Productive
+HMI_VAS,FSCHED,FSCHED_Decomp,57,,,Thread that does bitmap decompression while fetching from flash,true,true,Productive
+HMI_VAS,HMI,FPK_CompositionFast,60,Same priority as FPK_TimeDomainFast,FPKE,Composition of 75hz layers (e.g. Rev and Vel pointers); (see RSST_ExportData_T.xml) ,true,false,Productive
+HMI_VAS,HMI,FPK_TimeDomainFast,60,Lower priority than FPK_Display; higher priority than FPK_TimeDomainLow ,FPKE,Computation of data to be used for composing 75hz layers (see RSST_ExportData_T.xml) ,true,false,Productive
+HMI_VAS,HMI,CompManager_HMI,64,,FPKE,Main component in the HMI VAS responsible to start the other components in the HMI VAS,true,true,Productive
+HMI_VAS,APIM,APIM_SysRxEvCompo,30,Should be high priority task like the past design of FPKS; which is equivalent to one of the application task's priority (e.g. BasicApp_Prio2),CDS,This task is responsible to receive system even IPC notification from the legacy process. SW modules will send EVHD events from legacy process and this task will in turn “catch” them and turn the notification to system event to be passed on to HMI. ,true,true,Productive
+HMI_VAS,APIM,APIM_DataComponent,29,,CDS,This task is responsible to listen to all data change IPC notification related to ALL APIs in the system and in turn wake up HMI event driven task. (<http://bhs0jira:8080/browse/ART-11364>). ,true,true,Productive
+HMI_VAS,HMI,FPK_CompositionStream,45,,FPKE,HMI Composition task,true,false,Productive
+HMI_VAS,HMI,FPK_CompositionLowVSPD,45,Same priority as FPK_TimeDomainLow ,FPKE,Blending of 25hz layers (see RSST_ExportData_T.xml) ,true,false,Productive
+HMI_VAS,HMI,FPK_CompositionLow2D,45,Same priority as FPK_TimeDomainLow ,FPKE,Composition of 25hz layers (see RSST_ExportData_T.xml) ,true,false,Productive
+HMI_VAS,HMI,FPK_TimeDomainLow,45,Higher priority than FPK_Event; lower priority than FPK_TimeDomainFast ,FPKE,Computation of data to be used for composing 25hz layers ,true,false,Productive
+HMI_VAS,ModuleSW,EEDGen,41,,FPKE,Access to persistant memory finally stored on EEPROM emulated memory on AC,true,true,Productive
+HMI_VAS,HMI,HMI_Ticker,32,Priority < Anims ,CDS,100ms timer in HM VAS,true,false,Productive
+HMI_VAS,ModuleSW,ENTID_HMI,28,,FPKE,This task receive the events EV_ENTID__INIT_SIGNAL and EV_ENTID__DEINIT_SIGNAL during the start and stop of the CAN NMH from AC for activation of ENTID,true,true,Productive
+HMI_VAS,HMI,FPK_CP,61,Higher priority than FPK_TimeDomains ,FPKE,Mainly for exchanging data from HMI to composition threads. e.g. static scene display updates; animation requests ,true,false,Productive
+HMI_VAS,Graphics,GRAGOL_EventThread,27,,FPKE,Graphical object loader task responsible for bitmap upload/ download. It is a diagnostics feature.,true,false,Productive
+HMI_VAS,HMI,HMI_Comp,26,Priority < Anims ,FPKE,RPC interface for HMI; key events; warnings ,true,false,Productive
+HMI_VAS,MOST,MOSTCOM_Com,24,,FPKE,MOST LowLevel task supporting the MOST NetServices and driver. Will be removed in SW540 as it was replaced by an Integrity Task and IPC Component functionality can be moved to MostHighLevelTask.,true,true,Productive
+HMI_VAS,MOST,MostHighLevelTask,23,,FPKE,MOST Task for higher prio MOST application activities.,true,true,Productive
+HMI_VAS,MOST,MostApplTask,22,,FPKE,MOST Task handling application processes.,true,true,Productive
+HMI_VAS,HMI,STREAM_Low,5,,FPKE,Responsible to decode the stream and makes it available to CompositionStream,true,false,Productive
+SafeGRA_VAS,SafeGRA,GVOM_Comp,51,Prio > HMI_Comp ,CDS,GVOM server. Anytime a project wants to check if what reached the display is what we expected we use GVOM to calculate the CRC of an area and check if that was the expected result. Then we can determine if the display is corrupted and if needed trigger GSREN ,true,true,Productive
+GSServers_VAS,RGL,pvrserver_main,200,pvrServer > User app; pvrServer < = WMServer,CDS/Renesas,pvr server (**P**ower**VR** with SGX 540); Started via Integration file. Main use case is the rotating 3D car. ,true,true,Productive
+GSServers_VAS,RGL,DHD_Client07,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client06,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client05,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client04,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client03,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client02,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client01,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,true,Productive
+GSServers_VAS,RGL,DHD_Client00,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,true,Productive
+GSServers_VAS,RGL,DHD_IRQ_HANDLER,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): DHD Interrupthandling ,true,true,Productive
+GSServers_VAS,RGL,WMServer_main,203,WMserver > UserApp; WMServer >= dhd_server; WMServer >= pvrServer ,CDS/Renesas, WMServer_main  ,true,true,Productive
+GSServers_VAS,RGL,dhd_server_main,201,dhd_server > UserApp; dhd_server ? Wmserver ,CDS/Renesas,D/AVE (DHD; 2D rendering): Server; started via Integrity Integration file; clients are DHD_Clientxx,true,true,Productive
+GSServers_VAS,RGL,DHD_Client08,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+GSServers_VAS,RGL,DHD_Client09,202,,CDS/Renesas,D/AVE (DHD; 2D rendering): ,true,false,Productive
+BaseSystem_VAS,POWD,POWD_Client,110,,CDS,execution of undervoltage2 entry/exit containers,true,true,Productive
+HMI_VAS,POWD,POWD_Client,110,,CDS,execution of undervoltage2 entry/exit containers,true,true,Productive
+Legacy_VAS,POWD,POWD_Client,110,,CDS,execution of undervoltage2 entry/exit containers,true,true,Productive
+BaseSystem_VAS,,CompManager_BaseSystem,127,,,Main component in the BaseSystem VAS responsible to start the other components in the BaseSystem VAS,true,true,Productive
+BaseSystem_VAS,POWD,POWD_Master,127,,CDS,Activates undervoltage handling,true,true,Productive
+Kernel_VAS,RGL,Rivpd_KnlIntSendTask,210,,CDS,Specifies the interrupt task name,true,true,Productive
+Kernel_VAS,RGL,RIVPD_KnlThreadInit,127,,CDS,RIVPD initial task in kernal space. Prepare and start 'kernel sender task' s_rivpdKnlIntTask and then exit.,true,true,Productive
+GSServers_VAS,RGL,Rivpd_VdpBhTask,200,,CDS/Renesas,Specifies the task name of bottom handler task,true,true,Productive
+GSServers_VAS,RGL,Rivp_DepApiTask,190,Priority > User Applications ,CDS/Renesas,H.264 task. Receives the API calls from application and passes this onto RIVP. Priority set in rivp_vpd_local.h,true,true,Productive
+GSServers_VAS,RGL,rivp_server_main,127,,CDS,Initialises the server part and start the receiver thread (RIVP_DepApiRecvStart) then it basically stops waiting for the de-init semaphore. After the applications releases this semaphore the server is shut down. ,true,true,Productive
+HMI_VAS,Integrity,PosixServer,128,,CDS,POSIX interface on Integrity. Should be removed as this is not used in the system.,true,true,Development
+HMI_VAS,HMI,STREAM_High,100,,FPKE,Supervision thread when CompositionStream waits in case the STREAM_Low has no available decoded image.,true,false,Productive
+HMI_VAS,RGL,Rivp_DepApiCbTask,180,,CDS/Renesas,H.264 task. Receives the Callback from the RIVP to application. Priority set in rivp_vpd_local.h ,true,true,Productive
+HMI_VAS,MOST,VideoDec,53,,CDS,Video Decoder Subsystem Shell,true,true,Productive
+HMI_VAS,MOST,H264,52,,CDS,H.264 Decoder Peripheral Driver Shell,true,true,Productive
+HMI_VAS,MOST,GTSD,51,,CDS,MPEG Transport stream Decoder,true,true,Productive
+HMI_VAS,PictureServer,PictureServerScalingTask,23,,CDS,Task for scaling the pictures,true,true,Productive
+GSServers_VAS,RGL,NCGSYS_VSYNC_ISR,200,NCGSYS_Vsync_ISR == pvrServer and NCGSYS_Vsync_ISR <= WMServer,CDS/Renesas,DU handler task handling the WM swap and Vsync. Priority set in powervrini.c,false,true,Productive
+GSServers_VAS,RGL,GRAPHICS_MISR,200,GRAPHIC_MISR == pvrServer,CDS/Renesas,Graphics ISR Handler Task ,false,true,Productive
+GSServers_VAS,RGL,OSTimer,200,Configures weight = 120 ,CDS/Renesas,Task created by the SGX driver,false,true,Productive
+HMI_VAS,HMI,eso_HMI_MAIN,73,Same priority as the HMI_SM,FPKE/eso,Initial thread to start the ESO Software. This thread does nothing during normal operation and used at startup to spawn other eso threads in the system.,false,true,Productive
+HMI_VAS,HMI,eso_HMI_APIM_Client1_High,60,This thread is priortized lower than the APIM threads and also lower than HMI Client 2 & 3. Corresponding VW thread 'FPK_TimeDomainLow' has priority 45,FPKE/eso,fetch Conti data from FreezeBuffer for 20/25Hz rendering; HMI working thread. Composing + rendering.,false,true,Productive
+HMI_VAS,HMI,eso_HMI_APIM_Client2_BAP,45,This thread is priortized lower than the APIM threads and higher than HMI Client 1 & 3. Correspong VW thread 'FPK_TimeDomainFast' has priority 62.,FPKE/eso,fetch Conti data from FreezeBuffer for 60/75Hz rendering; HMI working thread. Composing + rendering.,false,true,Productive
+HMI_VAS,ModuleSW,HWA,53,,FPKE,HMI Wrapper forwards system events to HMI subsystem ,false,true,Productive
+HMI_VAS,FSCHED,FSCHED_Nor,57,,CDS,Task for accessing NOR ,true,true,Productive
+HMI_VAS,FSCHED,FSCHED_Nand,57,,CDS,Task for accessing NAND ,true,true,Productive
+HMI_VAS,HMI,eso_HMI_ResLoader,61,This thread has priority higher than eso trace threads,FPKE/eso,load icons and texts etc from Conti partition,false,true,Productive
+HMI_VAS,HMI,eso_SpawnFactory,4,This thread is priortized one level higher than the Trace threads of Trace & Debug. Same priority as the eso_Trace_Client,FPKE/eso,ESO tracing; trace viewer connection ,false,true,Development
+HMI_VAS,HMI,eso_TraceClient,4,This thread is priortized one level above Conti Trace and Debug,FPKE/eso,ESO tracing; main thread for trace functionality. This thread establishes connection to the Trace Server on the PC.,false,true,Development
+HMI_VAS,HMI,eso_SocketCallbackBackendThread,4,The debugging has lowest priority in the system ,FPKE/eso,Remote Listener thread backend. ESO tracing; one thread per trace connection ,false,true,Development
+HMI_VAS,Graphics,GraBoot_Comp,100,,FPKE,Thread that is responsible to load the graphic resources (bitmaps fonts text) from the flash memory to DDR. The actual copying is done by the FSCHED thread.,true,false,Productive
+HMI_VAS,HMI,FPK_Event,25,lower prio than FPK_CP and HMI_TimeDomains,FPKE,HMI message processing; widget rendering to offscreen surfaces,true,false,Productive
+Watchdog_Pkg,HMI,FPK_Event,25,lower prio than FPK_CP and HMI_TimeDomains,FPKE,HMI message processing; widget rendering to offscreen surfaces,true,false,Productive
+Legacy_VAS,,CTHDL_Legacy_MMIHdlTsk,42,,FPKE,CTHDL container task,true,true,Productive
+Kernel_VAS,Integrity,automount_task,127,,CDS,Task of the filesystem,true,false,Development
+UNTRUSTED_VAS,,SRPC_ServerPollJobsTsk,31,,,srpc server thread for server/job status handling,true,true,Productive
+UNTRUSTED_VAS,,SRPC_ServerJobProcessorTsk,21,,,srpc remote job execution,true,true,Productive
+HMI_VAS,SecureGRA,SRPC_ClientSupervisionTsk,50,,CDS,srpc client thread for job supervision (timeout and status),true,true,Productive
+HMI_VAS,ModuleSW,ENTID_genHMI,28,,FPKE,This task receives different DPOOL events w.r.t ENTID from application of all address spaces and sends it to AC via ICOM,true,true,Productive
+HMI_VAS,ModuleSW,TCO_Comp,107,,FPKE,Temporary task. As there is some issue in the CTHDL we have introduced this component that will call a function from TCO (trip computer) at InitRES_Active15 state.,true,true,Productive
+HMI_VAS,ModuleSW,API2DPL_Comp,28,,FPKE,Temporary task. As there is some issue in the CTHDL we have introduced this component that will call a function at IInitRES_ActiveNm state to copy some API values from GC to AC via DPOOL.,true,true,Productive
+Legacy_VAS,ModuleSW,CTHDL_Legacy_basicAppPrio2HdlTsk,30,,FPKE,CTHDL container task,true,false,Productive
+HMI_VAS,HMI,eso_Timer,,,FPKE/eso,ESO internal timer handling. The time periods for this timer are in range of > 200-300 ms.,false,true,Productive
+HMI_VAS,HMI,eso_HMI_Rendering,46,,FPKE/eso,HMI best effort Rendering thread,false,true,Productive
+Kernel_VAS,Integrity,LateKernelRangeClearTaskPriority,1,,CDS/GHS,Only small amount of the kernel memory be cleared at boot-up and that the rest of the memory be cleared later by this task,true,true,Productive
